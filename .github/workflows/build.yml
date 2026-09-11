@@ -72,7 +72,7 @@ jobs:
           exit 1
 
       - name: Releasing Latest ISOs
-        continue-on-error: true   # racecar: scan/report step, must not fail the build
+        continue-on-error: true   # racecar: scan/report/push step, must not fail the build
         if: ${{ success() && github.event_name == 'push'}}
         uses: "GutPuncher/action-automatic-releases@latest"
         with:
